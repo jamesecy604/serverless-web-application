@@ -76,7 +76,7 @@ jobs:
         # Azure CLI version to be used to execute the script. If not provided, latest version is used
         azcliversion: 2.321.0
         # Specify the script here
-        addSpnToEnvironment: true
+        #addSpnToEnvironment: true
         inlineScript: |
           az group create -l ${{ env.AZURE_REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}
           az deployment group validate -g ${{ env.APP_NAME_PREFIX }}-${{ env.ENVIRONMENT_TYPE }}-rg --template-file ./${{ env.BICEP_FILE_PATH }}/${{ env.BICEP_FILE_NAME }}.bicep
