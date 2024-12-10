@@ -50,7 +50,7 @@ permissions:
 jobs:
   validate_deploy:
     runs-on: ubuntu-latest 
-    environment: dev
+    environment: ${{ env.ENVIRONMENT_TYPE }}
 
     
     steps:
