@@ -43,6 +43,9 @@ env:
   MSI_RESOURCE_GROUP: ${{ github.event.inputs.MSI_RESOURCE_GROUP }}
   BICEP_FILE_PATH: 'deploy'
   BICEP_FILE_NAME: 'main'
+permissions:
+  id-token: write
+  contents: read
   
 jobs:
   validate_deploy:
