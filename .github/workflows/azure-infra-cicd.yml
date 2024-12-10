@@ -51,19 +51,16 @@ env:
   
 jobs:
   validate_deploy:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     environment: Azure
     steps:
-    # Authentication
-    # Set up the following secrets in your repository: AZURE_CREDENTIALS
-    # For details on usage of secrets, please refer https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
-    - name: Azure Login
+    - name: "Azure PowerShell login"
       uses: azure/login@v2
       with:
-         client-id: ${{ secrets.CLIENT_ID }}
-         tenant-id: ${{ secrets.TENANT_ID }}
-         subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
-         enable-AzPSSession: true
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
     
     # Checkout
     - name: Checkout
