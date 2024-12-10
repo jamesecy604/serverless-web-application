@@ -7,7 +7,7 @@ permissions:
 jobs:
   demo:
     runs-on: ubuntu-latest
-    environment: Azure
+    environment: dev
     steps:
       - name: "Azure PowerShell login"
         uses: azure/login@v2
