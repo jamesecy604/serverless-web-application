@@ -80,8 +80,8 @@ jobs:
         inlineScript: |
           #az group create -l ${{ env.AZURE_REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}
           az deployment group validate -g ${{ env.RESOURCE_GROUP_NAME }} --template-file ./${{ env.BICEP_FILE_PATH }}/${{ env.BICEP_FILE_NAME }}.bicep
-          #az bicep upgrade 
-          #az bicep build --file ./${{ env.BICEP_FILE_PATH }}/${{ env.BICEP_FILE_NAME }}.bicep
+          az bicep upgrade 
+          az bicep build --file ./${{ env.BICEP_FILE_PATH }}/${{ env.BICEP_FILE_NAME }}.bicep
 
     # Deployment Bicep template
     - name: Deploy ${{ env.ENVIRONMENT_TYPE }} environment infrastructure to ${{ env.RESOURCE_GROUP_NAME }}
