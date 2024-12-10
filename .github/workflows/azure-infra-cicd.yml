@@ -52,6 +52,7 @@ env:
 jobs:
   validate_deploy:
     runs-on: ubuntu-latest 
+    environment: Azure
     steps:
     # Authentication
     # Set up the following secrets in your repository: AZURE_CREDENTIALS
